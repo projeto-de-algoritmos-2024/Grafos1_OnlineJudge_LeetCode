@@ -5,18 +5,18 @@ class Node:
     
     def add_vizinho (self, vizinho):
         self.vizinhos.append(vizinho)
+        vizinho.vizinhos.append(self)
 
 def main():
     firstLine = input()
-    firstLine.split()
     maxServer = int(firstLine[0])
     kuroNumber = int(firstLine[2])
     
-    Line = input()
-    Line.split()
+    line = input()
+    line.split()
     
-    startNode = Node(firstLine[0])
-    server2 = Node(firstLine[1])
+    startNode = Node(line[0])
+    server2 = Node(line[2])
     
     startNode.add_vizinho(server2)
     
@@ -25,11 +25,9 @@ def main():
         Line.split(" ")
         
         server1 = Node(firstLine[0])
-        server2 = Node(firstLine[1])
+        server2 = Node(firstLine[2])
         
         server1.add_vizinho(server2)
-        #coloca a volta aqui? do 2 pro 1?
-        
 
     infected = bfs(startNode, kuroNumber)
     
@@ -38,7 +36,7 @@ def main():
         print("Impossible Revenge!")
   
 
-def bfs (startNode, kuronum):
+def bfs (startNode, kuroNumber):
     fila = []
     fila.append(startNode)
     fila.append(0)
@@ -48,7 +46,7 @@ def bfs (startNode, kuronum):
         server = fila.pop(0)
         distanceLayers = fila.pop(0)
         
-        if distanceLayers == kuronum :
+        if distanceLayers == kuroNumber :
             return len(infected)
         
         for serverVizinho in server.vizinhos:
