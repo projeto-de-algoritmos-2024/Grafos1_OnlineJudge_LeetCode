@@ -7,30 +7,30 @@ class Node:
         self.vizinhos.append(vizinho)
 
 def main():
-    maxServer = 9
-    kuroNumber = 3
+    firstLine = input()
+    firstLine.split()
+    maxServer = int(firstLine[0])
+    kuroNumber = int(firstLine[2])
     
-    startNode = Node(1)
-    node2 = Node(2)
-    node3 = Node(3)
-    node4 = Node(4)
-    node5 = Node(5)
-    node6 = Node(6)
-    node7 = Node(7)
-    node8 = Node(8)
-    node9 = Node(9)
+    Line = input()
+    Line.split()
     
-    startNode.add_vizinho(node2)
-    node2.add_vizinho(node7)
-    node2.add_vizinho(node3)
-    node2.add_vizinho(node4)
-    node4.add_vizinho(node5)
-    node4.add_vizinho(node6)
-    node4.add_vizinho(node8)
-    node8.add_vizinho(node9)
-    node5.add_vizinho(node3)
+    startNode = Node(firstLine[0])
+    server2 = Node(firstLine[1])
     
+    startNode.add_vizinho(server2)
     
+    for i in range(maxServer-2):
+        Line = input()
+        Line.split(" ")
+        
+        server1 = Node(firstLine[0])
+        server2 = Node(firstLine[1])
+        
+        server1.add_vizinho(server2)
+        #coloca a volta aqui? do 2 pro 1?
+        
+
     infected = bfs(startNode, kuroNumber)
     
     print(str(infected))
@@ -59,5 +59,5 @@ def bfs (startNode, kuronum):
     return -1
         
         
-
-main()     
+main() 
+    
