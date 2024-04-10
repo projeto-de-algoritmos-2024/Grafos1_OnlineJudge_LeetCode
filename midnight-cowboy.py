@@ -29,7 +29,7 @@ def main ():
     pathsAforC = bfs(graph, A, C, B)
 
     probability = len(pathsAforB) / (len(pathsAforB) + len(pathsAforC))
-    print(f"{probability:.6f}")
+    print("{:.6f}".format(probability))
 
 if __name__ == "__main__":
     main()
