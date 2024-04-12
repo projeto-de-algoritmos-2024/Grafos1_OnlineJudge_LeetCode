@@ -2,34 +2,29 @@ from typing import List
 
 def sumOfDistancesInTree(n: int, edges: List[List[int]]) -> List[int]:
     graph = [[] for _ in range(n)]
+    distances = [1] * n
+    totalDistances = [0] * n
 
     for u, v in edges:
         graph[u].append(v)
         graph[v].append(u)
 
-    def bfs(start):
-        distances = [0] * n
-        visited = [False] * n
-        queue = [(start, 0)]
-        visited[start] = True
+    def dfs(start, father):
+        for neighbor in graph[start]:
+            if neighbor != father:
+                dfs(neighbor, start)
+                distances[start] += distances[neighbor]
+                totalDistances[start] += totalDistances[neighbor] + distances[neighbor]
 
-        while queue:
-            u, dist = queue.pop(0)
-            distances[u] = dist
+    def dfsTwo(start, father):
+        for neighbor in graph[start]:
+            if neighbor != father:
+                totalDistances[neighbor] = totalDistances[start] - distances[neighbor] + (n - distances[neighbor])
+                dfsTwo(neighbor, start)
 
-            for neighbor in graph[u]:
-                if not visited[neighbor]:
-                    visited[neighbor] = True
-                    queue.append((neighbor, dist + 1))
-        
-        return distances
-
-    totalDistances = [0] * n
-
-    for u in range(n):
-        distances = bfs(u)
-        totalDistances[u] = sum(distances)
-
+    dfs(0, -1)
+    dfsTwo(0, -1)
+    
     return totalDistances
 
 
