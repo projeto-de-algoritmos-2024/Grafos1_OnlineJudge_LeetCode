@@ -1,6 +1,6 @@
 def bfs (graph, startPosition, AimedPosition, visited):
     fila = [startPosition]
-    looked = set([startPosition])
+    looked = [startPosition]
     
     while fila:
         u = fila.pop(0)
@@ -9,7 +9,7 @@ def bfs (graph, startPosition, AimedPosition, visited):
         
         for vizinho in graph[u]:
             if (vizinho not in visited) and (vizinho not in looked):
-                looked.add(vizinho)
+                looked.append(vizinho)
                 fila.append(vizinho)
 class Solution:
                     
