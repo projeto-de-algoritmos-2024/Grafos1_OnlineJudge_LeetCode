@@ -1,27 +1,28 @@
 class Solution:
     def possibleBipartition(self, n: int, dislikes: List[List[int]]) -> bool:
-        layers = [0] * (n+1) #groups
-        fila = []
-        visited = []
-        
-        for i in range(1, n+1):
+        graph = [[] for _ in range(n + 1)]  # Criando um grafo vazio
             
-            if layers[i] == 0: #usando o vetor pra saber 
-                               # quais já foram visitados tb
-                fila = [i]
-                layers[i] = 1
+        for dislike in dislikes: # Construindo o grafo
+            a, b = dislike
+            graph[a].append(b)
+            graph[b].append(a)
                 
+        colors = [0] * (n + 1)  # 0: sem cor, 1: verde, 2: amarelo
+
+        for i in range(1, n + 1):
+            if colors[i] == 0:  # node sem cor
+                fila = [i]
+                colors[i] = 1  # bota verde 
+
                 while fila:
-                    noAtual = fila.pop(0)
-                    layerAtual = layers[noAtual]
-                    
-                    for vizinho in dislikes[noAtual - 1]:
-                        if (layers[noAtual] == 0):
-                            layers[vizinho] = -1 * layerAtual
+                    node = fila.pop(0)
+                    corAtual = colors[node]
+
+                    for vizinho in graph[node]:
+                        if colors[vizinho] == 0:  # vizinho sem cor
+                            colors[vizinho] = (-1) * corAtual  # bota cor oposta
                             fila.append(vizinho)
-                            
-                        elif(layers[vizinho] == layerAtual):
+                        elif colors[vizinho] == corAtual:  # achou a mesma cor
                             return False
-        
+
         return True
-        
