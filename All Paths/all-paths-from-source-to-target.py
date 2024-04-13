@@ -31,7 +31,6 @@ def main ():
         if Y not in graph:
             graph[Y] = []
 
-    print(graph)
     print(bfs(graph))
 
 if __name__ == "__main__":
