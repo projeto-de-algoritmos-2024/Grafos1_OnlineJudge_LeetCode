@@ -40,11 +40,8 @@ class Solution:
                     mouseVisited.update(mouseLooked or set([mousePosition]))
                     catVisitedx.update(catLooked or set([catPosition]))
                     
-                    if mousePosition in mouseVisited and mouseLooked is None:
+                    if (mousePosition in mouseVisited and mouseLooked is None) and (catPosition in catVisited and catLooked is None):
                         result = 0
-                    elif catPosition in catVisited and catLooked is None:
-                        result = 0
-                        
                     mousePosition = (catPosition if result != 2 else mousePosition)
                     
         return result
