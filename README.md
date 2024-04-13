@@ -18,7 +18,7 @@ A partir do juiz Online [LeetCode](https://leetcode.com/) selecionamos 2 exercí
 
 |Exercício | Aluno |
 | -- | -- |
-|  | Ana Carolina Costa César |
+| [Possible Bipartition](https://leetcode.com/problems/possible-bipartition) | Ana Carolina Costa César |
 |  | Ana Caroline Campos Rocha |
 
 ### Nível Difícil
@@ -27,49 +27,3 @@ A partir do juiz Online [LeetCode](https://leetcode.com/) selecionamos 2 exercí
 | -- | -- |
 | [Cat and Mouse](https://leetcode.com/problems/cat-and-mouse) | Ana Carolina Costa César |
 | [Sum of Distances in Tree](https://leetcode.com/problems/sum-of-distances-in-tree) | Ana Caroline Campos Rocha |
-
-## Screenshots
-<!-- Adicione 3 ou mais screenshots do projeto em funcionamento. !-->
-### [Cat and Mouse](https://leetcode.com/problems/cat-and-mouse)
-
-### [Sum of Distances in Tree](https://leetcode.com/problems/sum-of-distances-in-tree)
-
-O algoritmo presente neste repositório foi ajustado para que seja possível rodá-lo no terminal, permitindo que o próprio usuário entre com os valores de _n_ e _edges_.
-
-Para rodar, baixe o arquivo _sum-of-distances-in-tree.py_, abra o terminal na pasta em que o arquivo se encontra e execute o seguinte comando: 
-
-```shell
-python sum-of-distances-in-tree.py
-```
-
-Em seguinda basta inserir os valores de _n_ e _edges_ respectivamente, no seguinte formato, por exemplo: 
-
-```shell
-6
-0 1
-0 2
-2 3
-2 4
-2 5
-```
-
-#### Caso 1
-
-![Case1](/assets/img/case1.png)
-
-#### Caso 4
-
-![Case4](/assets/img/case4.png)
-
-#### Submissão
-
-![Submission](/assets/img/submission.png)
-
-## Instalação 
-**Linguagem**: python<br>
-
-<!-- 
-## Outros 
-
-Quaisquer outras informações sobre seu projeto podem ser descritas abaixo.
-!-->
