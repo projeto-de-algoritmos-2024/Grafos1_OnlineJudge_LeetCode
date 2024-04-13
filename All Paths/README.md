@@ -1,4 +1,4 @@
-# [Sum of Distances in Tree](https://leetcode.com/problems/sum-of-distances-in-tree)
+# [All Paths From Source to Target](https://leetcode.com/problems/all-paths-from-source-to-target)
 
 O algoritmo presente neste repositório foi ajustado para que seja possível rodá-lo no terminal, permitindo que o usuário entre com os valores de _N_ (número de arestas do grafo), _N_ valores de _X_  e _Y_, indicando que existe uma aresta partindo de _X_ para _Y_.
 
