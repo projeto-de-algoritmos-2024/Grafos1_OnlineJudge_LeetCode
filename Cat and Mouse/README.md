@@ -4,16 +4,16 @@
 
 ### Caso 1
 
-![Case1](Cat and Mouse/assets/case 1.png)
+![Case1](/Cat%20and%20Mouse/assets/case%201.png)
 
 ### Caso 2
 
-![Case2](Cat and Mouse/assets/case 2.png)
+![Case2](/Cat%20and%20Mouse/assets/case%202.png)
 
 ### Caso 3
 
-![Case3](Cat and Mouse/assets/case 3.png)
+![Case3](/Cat%20and%20Mouse/assets/case%203.png)
 
 ### Submissão
 
-![Submission](Cat and Mouse/assets/submission.png)
+![Submission](/Cat%20and%20Mouse/assets/submission.png)
