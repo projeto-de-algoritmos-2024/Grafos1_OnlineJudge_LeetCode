@@ -1,6 +1,6 @@
 # Grafos1_OnlineJudge_LeetCode
 
-**Trabalho 1** </br>
+**Número da Lista: 1** </br>
 **Conteúdo da Disciplina**: Grafos1
 
 ## Alunos
@@ -19,7 +19,7 @@ A partir do juiz Online [LeetCode](https://leetcode.com/) selecionamos 2 exercí
 |Exercício | Aluno |
 | -- | -- |
 | [Possible Bipartition](https://leetcode.com/problems/possible-bipartition) | Ana Carolina Costa César |
-| [All Paths From Source to Target](https://leetcode.com/problems/possible-bipartition) | Ana Caroline Campos Rocha |
+| [All Paths From Source to Target](https://leetcode.com/problems/all-paths-from-source-to-target) | Ana Caroline Campos Rocha |
 
 ### Nível Difícil
 
