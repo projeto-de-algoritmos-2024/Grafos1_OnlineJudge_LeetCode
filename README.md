@@ -1,7 +1,8 @@
 # Grafos1_OnlineJudge_LeetCode
 
 **Número da Lista: 1** </br>
-**Conteúdo da Disciplina**: Grafos1
+**Conteúdo da Disciplina:** Grafos1 </br>
+**Vídeo de Apresentação:** https://youtu.be/pK3Ij4yWPi4
 
 ## Alunos
 |Matrícula | Aluno |
