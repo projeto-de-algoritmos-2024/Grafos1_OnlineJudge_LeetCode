@@ -40,7 +40,7 @@ class Solution:
                 
         #Próximo estado- contar arestas de saidas,
         # quantos estados possíveis a partir desse estado
-        numProxStatesPossiveis = [[[0]*numNodes for _ in range(numNodes)] for _ in range(3)]
+        numProxStatesPossiveis = [[[0]*numNodes for mouse in range(numNodes)] for turn in range(3)]
         # matriz tridimensional de numNode x numNodes x 3
         
         for turn in range(1, 3):
@@ -71,7 +71,7 @@ class Solution:
                 
         #BFS
         while fila:
-            mouse, cat, turn = fila.popleft() #proximo state
+            mouse, cat, turn = fila.popleft() #proximo state, que a gnt ja sabe pq tamo indo de tras pra frente
             result = stateResults[(mouse,cat,turn)]
             for mouseAnt, catAnt, turnAnt in getStateAnterior(mouse, cat, turn):
                 #state anterior que queremos calcular
@@ -82,9 +82,9 @@ class Solution:
                     stateResults[(mouseAnt, catAnt, turnAnt)] = result
                     fila.append((mouseAnt, catAnt, turnAnt))
                 else:
-                    numProxStatesPossiveis[mouseAnt][catAnt][turnAnt] -=1
-                    if numProxStatesPossiveis[mouseAnt][catAnt][turnAnt] == 0:
-                        stateResults[(mouseAnt, catAnt, turnAnt)] = 3 - turnAnt
+                    numProxStatesPossiveis[turnAnt][mouseAnt][catAnt] -=1
+                    if numProxStatesPossiveis[turnAnt][mouseAnt][catAnt] == 0:
+                        stateResults[(mouseAnt, catAnt, turnAnt)] = 3 - turnAnt #ex: gato turn 2: 3-2 = 1 rato ganhou
                         fila.append((mouseAnt, catAnt, turnAnt))
                         
-        return stateResults[(1, 2, 1)]     
+        return stateResults[(1, 2, 1)]  
