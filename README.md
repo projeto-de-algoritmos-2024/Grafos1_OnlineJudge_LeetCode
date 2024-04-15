@@ -1,6 +1,6 @@
 # Grafos1_OnlineJudge_LeetCode
 
-**Trabalho 1** </br>
+**Número da Lista: 1** </br>
 **Conteúdo da Disciplina**: Grafos1
 
 ## Alunos
