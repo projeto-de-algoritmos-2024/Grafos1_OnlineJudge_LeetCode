@@ -43,14 +43,12 @@ class Solution:
         numProxStatesPossiveis = [[[0]*numNodes for mouse in range(numNodes)] for turn in range(3)]
         # matriz tridimensional de numNode x numNodes x 3
         
-        for turn in range(1, 3):
+        for turn in range(1,3):
             for mouse in range(numNodes):
-                for cat in range(numNodes):
-                    if turn == 1: #vez do rato
-                        numProxStatesPossiveis[turn][mouse][cat] = len(graph[mouse])
-                    else: #vez do gato, gato é proibido de passar no node 0
-                        numProxStatesPossiveis[turn][mouse][cat] = len(graph[cat]) - (0 in graph[cat])
-                        
+                for cat in range(1,numNodes):
+                    if(turn==1): numProxStatesPossiveis[turn][mouse][cat] = len(graph[mouse]);
+                    else: numProxStatesPossiveis[turn][mouse][cat] = len(graph[cat]) - (0 in graph[cat]);
+                    
         #Pegar o estado anterior a partir do atual
         def getStateAnterior (mouse, cat, turn):
             statesAnteriores = []
@@ -78,13 +76,13 @@ class Solution:
                 
                 if (mouseAnt, catAnt, turnAnt) in stateResults:
                     continue #ja calculou? passa reto
-                if result == turnAnt:
+                if (result == turnAnt):
                     stateResults[(mouseAnt, catAnt, turnAnt)] = result
                     fila.append((mouseAnt, catAnt, turnAnt))
                 else:
                     numProxStatesPossiveis[turnAnt][mouseAnt][catAnt] -=1
-                    if numProxStatesPossiveis[turnAnt][mouseAnt][catAnt] == 0:
+                    if (numProxStatesPossiveis[turnAnt][mouseAnt][catAnt] == 0):
                         stateResults[(mouseAnt, catAnt, turnAnt)] = 3 - turnAnt #ex: gato turn 2: 3-2 = 1 rato ganhou
                         fila.append((mouseAnt, catAnt, turnAnt))
                         
-        return stateResults[(1, 2, 1)]  
+        return stateResults[(1, 2, 1)]   
